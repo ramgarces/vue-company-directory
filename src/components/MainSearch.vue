@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <input type="text" placeholder="Search Staff Member" class="search" />
+    <input type="text" placeholder="Search for a Chess Coach" class="search" />
     <span class="icon"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
@@ -25,10 +25,10 @@
   @apply relative flex w-full items-stretch;
   .search {
     @apply rounded-md border-0 px-8 py-4 text-slate-700
-    placeholder-slate-400 outline-none focus:ring focus:ring-yellow-500;
+    placeholder-neutral-800 outline-none focus:ring focus:ring-green-800;
   }
   .icon {
-    @apply absolute right-0 z-10 py-4 pr-8 text-slate-400;
+    @apply absolute right-0 z-10 py-4 pr-8 font-extrabold text-green-700;
   }
 }
 </style>
