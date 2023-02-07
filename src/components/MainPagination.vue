@@ -30,14 +30,14 @@ const nextPage = () => {
 .pagination {
   @apply flex justify-center gap-4;
   .action {
-    @apply rounded-md bg-slate-100 p-2 font-medium text-slate-700 shadow-md
-    hover:bg-slate-200 disabled:text-slate-400 hover:disabled:bg-slate-100;
+    @apply rounded-md bg-green-800 p-2 font-medium text-neutral-200 shadow-md
+    hover:bg-green-600 disabled:text-green-500 hover:disabled:bg-green-200;
   }
   .page {
-    @apply rounded-md bg-slate-100 p-2 font-medium text-slate-700 shadow-md
-    hover:bg-slate-200;
+    @apply rounded-md bg-green-800 p-2 font-medium text-slate-200 shadow-md
+    hover:bg-green-600;
     &.active {
-      @apply bg-yellow-700 text-slate-100 hover:bg-yellow-600;
+      @apply bg-green-500 text-slate-100 hover:bg-green-400;
     }
   }
 }
