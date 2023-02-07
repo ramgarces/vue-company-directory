@@ -22,13 +22,13 @@
 
 <style scoped lang="postcss">
 .wrapper {
-  @apply relative flex w-full items-stretch;
+  @apply relative flex w-full items-stretch px-6;
   .search {
     @apply rounded-md border-0 px-14 py-4 tracking-wider text-slate-700
     placeholder-neutral-800 outline-none focus:ring-4 focus:ring-green-800;
   }
   .icon {
-    @apply absolute left-2 z-10 py-4 pr-8 text-green-700;
+    @apply absolute left-10 z-10 py-4 pr-8 text-green-700;
   }
 }
 </style>
