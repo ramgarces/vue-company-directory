@@ -20,9 +20,9 @@ const brand = ref('🏛️ Fake Company Directory')
 
 <style scoped lang="postcss">
 nav {
-  @apply h-20 bg-slate-900 text-slate-200;
+  @apply flex h-20 bg-slate-900 text-slate-200;
   .wrapper {
-    @apply flex items-center justify-between;
+    @apply container mx-auto flex w-full items-center justify-between;
   }
 }
 </style>
