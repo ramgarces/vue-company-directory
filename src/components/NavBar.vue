@@ -20,7 +20,7 @@ const brand = ref('♟️ Chess Connections')
 
 <style scoped lang="postcss">
 nav {
-  @apply flex h-20 bg-neutral-900 text-slate-200;
+  @apply flex h-20 bg-neutral-900 px-6 text-slate-200;
   .wrapper {
     @apply container mx-auto flex w-full items-center justify-between;
     .brand {
@@ -34,7 +34,7 @@ nav {
         @apply rounded-md px-4 py-2 hover:bg-green-800 hover:text-slate-900;
       }
       &-login {
-        @apply rounded-md bg-slate-500 px-4 py-2 hover:bg-red-700
+        @apply rounded-md bg-neutral-500 px-4 py-2 hover:bg-red-700
         hover:text-slate-100;
       }
     }
