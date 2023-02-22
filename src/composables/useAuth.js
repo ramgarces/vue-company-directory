@@ -1,21 +1,42 @@
+import { ref } from 'vue'
 import router from '@/router'
-import { firebaseApp } from '@/composables/useFirebase'
 
-import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth'
-import { useAuth as firebaseAuth } from '@vueuse/firebase/useAuth'
+const dbUsers = [
+  {
+    username: 'admin',
+    password: 'admin',
+    name: 'Admin',
+    role: 'admin',
+    email: 'admin@coolcompany.com',
+  },
+  {
+    username: 'user',
+    password: 'user',
+    name: 'User',
+    role: 'user',
+    email: 'user@coolcompany.com',
+  },
+]
 
-const auth = getAuth(firebaseApp)
-
-const { isAuthenticated, user } = firebaseAuth(auth)
+const isAuthenticated = ref(false)
+const user = ref({})
 
 export const useAuth = () => {
-  const login = async (username, password) => {
-    await signInWithEmailAndPassword(auth, username, password)
-    return isAuthenticated.value
+  const login = (username, password) => {
+    console.log(username)
+    const dbUser = dbUsers.find((u) => u.username === username && u.password === password)
+    if (dbUser) {
+      const { name, role, email, username } = dbUser
+      isAuthenticated.value = true
+      user.value = { name, role, email, username }
+      return true
+    }
+    return false
   }
 
-  const logout = async () => {
-    await signOut(auth)
+  const logout = () => {
+    isAuthenticated.value = false
+    user.value = {}
     router.push({ name: 'Home' })
   }
   return { isAuthenticated, user, login, logout }
